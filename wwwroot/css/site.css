@@ -1,0 +1,90 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.mi-nombre {
+    color: rebeccapurple;
+}
+
+#avatar {
+    width: auto;
+    height: 300px;
+}
+
+#dotnet-image {
+    width: 200px;
+}
+
+.seccion-bienvenida {
+    margin: 5rem 0 5rem 0;
+    color: white;
+}
+
+    .seccion-bienvenida h1 {
+        margin-bottom: 1rem;
+    }
+
+    .seccion-bienvenida p {
+        font-family: sans-serif;
+        line-height: 1.5;
+        font-size: 1.25rem;
+    }
+
+.habilidades ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.habilidades i {
+    font-size: 50px;
+    color: rebeccapurple;
+}
+
+.boton-morado {
+    background-color: rebeccapurple !important;
+    border-color: rebeccapurple;
+}
+
+/* Animación al cargar los <li> */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-nav .nav-item {
+    animation: fadeIn 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+    /* Animación al pasar el mouse */
+    .navbar-nav .nav-item:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+h1 {
+    animation: fadeIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+}

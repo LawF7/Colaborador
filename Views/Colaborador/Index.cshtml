@@ -1,0 +1,53 @@
+﻿@model IEnumerable<IndiceColaboradoresViewModel>
+@{
+    ViewData["Title"] = "Colaboradores";
+}
+
+<h1 style="text-align:center">Colaboradores</h1>
+<br />
+
+<a asp-action="Crear" class="btn btn-success mb-4"><i class="bi bi-plus-circle-dotted"></i> Nuevo</a>
+
+
+<div class="accordion acordeon-departamentos">
+    @foreach (var departamento in Model)
+    {
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="cabeceraUno">
+                @{
+                    var id = departamento.Departamento.Replace(" ", "");
+                    var dataBSTarget = "#" + id;
+                }
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="@dataBSTarget">
+                    <span class="me-3">
+                        <span><strong>@departamento.Departamento</strong></span>
+                    </span>
+                </button>
+            </h2>
+            <div id="@id" class="accordion-collapse collapse ">
+                <div>
+                    <ul class="list-group">
+                        @foreach (var colaborador in departamento.Colaboradores)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong>@colaborador.NombreCompleto</strong>
+                                <span>DPI: @colaborador.DPI</span>
+                                <span>
+                                    <a class="btn btn-primary ms-2" asp-action="Editar" asp-route-id="@colaborador.Id">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                    <a class="btn btn-danger" asp-action="Borrar" asp-route-id="@colaborador.Id">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </span>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

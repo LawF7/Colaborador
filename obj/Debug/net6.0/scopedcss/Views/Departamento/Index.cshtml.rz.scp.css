@@ -1,0 +1,23 @@
+﻿.acordeon-departamentos button[b-e36byvyfma] {
+    color: black !important;
+    font-size: 20px;
+}
+
+.acordeon-departamentos button > span[b-e36byvyfma] {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.acordeon-departamentos ul li[b-e36byvyfma] {
+    display: flex;
+    justify-content: space-between;
+}
+
+.acordeon-departamentos .accordion-collapse[b-e36byvyfma] {
+    font-size: 18px;
+}
+
+h1[b-e36byvyfma] {
+    color: rebeccapurple;
+}

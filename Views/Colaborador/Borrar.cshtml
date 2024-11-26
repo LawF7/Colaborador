@@ -1,0 +1,35 @@
+﻿@model Colaborador
+@{
+    ViewData["Title"] = "Borrar Colaborador";
+}
+
+<div class="container" style="max-width: 600px; margin-top: 20px;">
+    <!-- Título -->
+    <h1 class="text-center mb-4">Eliminar Colaborador</h1>
+
+    <!-- Mensaje de confirmación -->
+    <p class="text-center">¿Está seguro de que desea eliminar al colaborador: <strong>@Model.NombreCompleto</strong>?</p>
+
+    <!-- Mostrar mensaje de error si existe -->
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center" role="alert">
+            @ViewData["ErrorMessage"]
+        </div>
+    }
+
+    <!-- Formulario de confirmación -->
+    <form asp-action="BorrarColaborador" class="text-center">
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Botones -->
+        <div class="mt-4">
+            <button type="submit" class="btn btn-danger me-2">
+                <i class="bi bi-trash-fill"></i> Eliminar
+            </button>
+            <a class="btn btn-secondary" asp-action="Index">
+                <i class="bi bi-arrow-left"></i> Volver
+            </a>
+        </div>
+    </form>
+</div>
